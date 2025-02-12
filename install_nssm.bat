@@ -21,12 +21,13 @@ echo.
 :: Define variables
 set "nssm_url=https://nssm.cc/release/nssm-2.24.zip"
 set "nssm_zip=nssm-2.24.zip"
-set "extract_dir=C:\nssm-2.24"
-set "nssm_path=%extract_dir%\win64"
+set "extract_dir=C:\"
+set "extracted_dir=C:\nssm-2.24"
+set "nssm_path=%extracted_dir%\win64"
 
 :: Check if the folder already exists
-if exist "%extract_dir%" (
-    echo The folder "%extract_dir%" already exists.
+if exist "%extracted_dir%" (
+    echo The folder "%extracted_dir%" already exists.
     set /p overwrite="Do you want to overwrite it? (yes/no): "
     if /i "%overwrite%" neq "yes" (
         echo Process aborted by the user.
@@ -34,7 +35,7 @@ if exist "%extract_dir%" (
         exit /b
     )
     echo Overwriting existing folder...
-    rmdir /s /q "%extract_dir%"
+    rmdir /s /q "%extracted_dir%"
 )
 
 :: Download NSSM using PowerShell's Invoke-WebRequest
