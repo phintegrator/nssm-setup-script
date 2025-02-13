@@ -12,8 +12,8 @@ if %errorLevel% neq 0 (
 
 :: Informative message
 echo ======================================================
-echo NSSM Setup Script
-echo This script will download, extract, and configure NSSM.
+echo NSSM Setup Script - Version 2.24
+echo This script will download, extract, and configure NSSM 2.24.
 echo ======================================================
 echo.
 
@@ -31,7 +31,7 @@ if exist "%extracted_dir%" (
 )
 
 :: Download NSSM using PowerShell's Invoke-WebRequest
-echo Downloading NSSM from %nssm_url%...
+echo Downloading NSSM 2.24 from %nssm_url%...
 powershell -Command "Invoke-WebRequest -Uri '%nssm_url%' -OutFile '%nssm_zip%'"
 if %errorLevel% neq 0 (
     echo Failed to download NSSM.
@@ -64,5 +64,5 @@ echo NSSM has been added to the system PATH.
 
 :: Final message
 echo ======================================================
-echo Your NSSM is ready! Open a new Command Prompt to access it.
+echo Your NSSM 2.24 is ready! Open a new Command Prompt to access it.
 echo ======================================================
