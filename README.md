@@ -31,7 +31,7 @@ cd nssm-setup-script
 
 ### 3️⃣ Run the script as Administrator
 ```sh
-nssm-setup.bat
+install_nssm.bat
 ```
 
 ## How It Works
